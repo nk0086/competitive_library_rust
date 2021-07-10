@@ -1,3 +1,6 @@
+use cargo_snippet::snippet;
+
+#[snippet]
 pub fn modpow(mut base: usize, mut exp: usize, n: usize) -> usize {
     let mut res = 1;
     while exp > 0 {

@@ -1,9 +1,13 @@
+use cargo_snippet::snippet;
+
+#[snippet("unionfind")]
 #[derive(Debug)]
 struct Unionfind {
     node: Vec<usize>,
     rank: Vec<usize>,
 }
 
+#[snippet("unionfind")]
 impl Unionfind {
     fn new(number: usize) -> Unionfind {
         Unionfind {

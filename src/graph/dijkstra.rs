@@ -1,15 +1,20 @@
+use cargo_snippet::snippet;
+
+#[snippet("dijkstra")]
 #[derive(Debug, Clone, PartialEq, Eq, Ord)]
 struct Node {
     cost: i64,
     v: usize,
 }
 
+#[snippet("dijkstra")]
 impl PartialOrd for Node {
     fn partial_cmp(&self, other: &Node) -> Option<std::cmp::Ordering> {
         Some(other.cmp(self))
     }
 }
 
+#[snippet("dijkstra")]
 pub fn dijkstra(n: usize, start: usize, Graph: &Vec<Vec<(usize, i64)>>) -> (Vec<i64>, Vec<i64>) {
     let mut binary_heap = std::collections::BinaryHeap::new();
     let mut d = vec![std::i64::MAX; n];
@@ -32,6 +37,7 @@ pub fn dijkstra(n: usize, start: usize, Graph: &Vec<Vec<(usize, i64)>>) -> (Vec<
     (d, shortest_path)
 }
 
+#[snippet(include = "dijkstra")]
 fn get_shortest_path(path: Vec<i64>, end: usize) -> Vec<(i64, i64)> {
     let mut node = end as i64;
     let mut pre_shortest_path = vec![];
