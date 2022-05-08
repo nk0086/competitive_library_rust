@@ -1,7 +1,7 @@
 use cargo_snippet::snippet;
 
 #[snippet]
-fn upper_bound<T: PartialOrd>(array: &[T], k: T) -> u64 {
+fn upper_bound<T: PartialOrd>(array: &[T], k: T) -> usize {
     let mut ok = array.len() as i64;
     let mut ng = -1;
 
@@ -14,7 +14,7 @@ fn upper_bound<T: PartialOrd>(array: &[T], k: T) -> u64 {
         }
     }
 
-    ok as u64
+    ok as usize
 }
 
 #[cfg(test)]
@@ -47,6 +47,6 @@ mod test {
     #[test]
     fn simple_min() {
         let v = vec![4, 4, 5, 7, 8];
-        assert_eq!(upper_bound(&v, 3), 0);
+        assert_eq!(upper_bound(&v, -1), 0);
     }
 }
